@@ -214,7 +214,7 @@ function g:CreateSlider(category, name, upper_limit, amount)
 				end
 				if relpos.X > slider.btn.AbsoluteSize.X then
 					slider.amount = upper_limit
-					slider.fg.Size = UDim2.fromScale(.8, 1)
+					slider.fg.Size = UDim2.fromScale(.95, 1)
 					slider.btn.Text = (name.." :" or "untitled: ")..tostring(slider.amount)
 				end
 				if relpos.X < 0 then
