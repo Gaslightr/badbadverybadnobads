@@ -154,13 +154,13 @@ function g:CreateCheckbox(section, name, state)
 		gui.btn.Size = UDim2.new(1, 0, 1, 0)
 		gui.btn.BackgroundTransparency = 1
 		gui.btn.Text = ""
-		function gui:ChangeState(state)
-			if state then
+		function gui:ChangeState(s)
+			if s then
 				gui.box.BackgroundColor3 = Color3.fromRGB(37, 165, 69)
-				gui.state = false
+				gui.state = true
 			else
 				gui.box.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
-				gui.state = true
+				gui.state = false
 			end
 		end
 		gui:ChangeState(state)
