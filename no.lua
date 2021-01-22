@@ -162,6 +162,7 @@ function g:CreateCheckbox(section, name, state)
 				gui.box.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
 				gui.state = false
 			end
+			print(tostring(s).." "..tostring(gui.state))
 		end
 		gui:ChangeState(state)
 		gui.btn.Activated:Connect(function()
