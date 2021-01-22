@@ -120,7 +120,7 @@ function g:CreateSection(category, name)
 		section.title.TextXAlignment = Enum.TextXAlignment.Center
 		section.title.Size = UDim2.fromScale(1, 0.1)
 		section.ui_layout = Instance.new("UIListLayout", section.content)
-		section.ui_layout.Padding = UDim.new(0.02, 0)
+		section.ui_layout.Padding = UDim.new(0.01, 0)
 		section.ui_layout.SortOrder = Enum.SortOrder.LayoutOrder
 		return section
 	end
@@ -131,7 +131,7 @@ function g:CreateCheckbox(section, name, state)
 		local gui = {}
 		gui.state = state
 		gui.bg = Instance.new("Frame", section.content)
-		gui.bg.Size = UDim2.fromScale(1, 0.05)
+		gui.bg.Size = UDim2.fromScale(1, 0.03)
 		gui.bg.BackgroundTransparency = 1
 		gui.box = Instance.new("Frame", gui.bg)
 		gui.box.Size = UDim2.fromOffset(16, 16)
@@ -181,15 +181,15 @@ function g:CreateSlider(category, name, upper_limit, amount)
 		slider.bg.Size = UDim2.new(1, 0, 0, 15)
 		slider.bg.BackgroundTransparency = 1
 		slider.fg = Instance.new("Frame", slider.bg)
-		slider.fg.Size = UDim2.fromScale((amount/upper_limit)/.8, 1)
+		slider.fg.Size = UDim2.fromScale((amount/upper_limit)/.9, 1)
 		slider.fg.BorderSizePixel = 0
-		slider.fg.Position = UDim2.fromScale(.1)
+		slider.fg.Position = UDim2.fromScale(.05)
 		slider.fg.BackgroundColor3 = Color3.fromRGB(30, 205, 110)
 		slider.corner = Instance.new("UICorner", slider.fg)
 		slider.corner.CornerRadius = UDim.new(0, 8)
 		slider.btn = Instance.new("TextButton", slider.bg)
-		slider.btn.Size = UDim2.fromScale(.8, 1)
-		slider.btn.Position = UDim2.fromScale(.1)
+		slider.btn.Size = UDim2.fromScale(.9, 1)
+		slider.btn.Position = UDim2.fromScale(.05)
 		slider.btn.BackgroundTransparency = 1
 		slider.btn.Text = (name.." :" or "untitled: ")..tostring(amount)
 		slider.btn.TextColor3 = Color3.new(1, 1, 1)
@@ -207,7 +207,7 @@ function g:CreateSlider(category, name, upper_limit, amount)
 			if slider.being_dragged then
 				local relpos = Vector2.new(mouse.x, mouse.y) - slider.fg.AbsolutePosition
 				if relpos.X <= slider.btn.AbsoluteSize.X and relpos.X >= 0 then
-					slider.amount = math.floor(((slider.fg.AbsoluteSize.X / slider.bg.AbsoluteSize.X*(upper_limit+(upper_limit/5))))+0.5)
+					slider.amount = math.floor(((slider.fg.AbsoluteSize.X / slider.bg.AbsoluteSize.X*(upper_limit+(upper_limit/10))))+0.5)
 					slider.fg.Size = UDim2.new(0, relpos.X, 1)
 					print(relpos.X)
 					slider.btn.Text = (name.." :" or "untitled: ")..tostring(slider.amount)
