@@ -166,6 +166,7 @@ function g:CreateCheckbox(section, name, state)
 		end
 		gui:ChangeState(state)
 		gui.btn.Activated:Connect(function()
+				print("as)
 			gui:ChangeState(not gui.state)
 		end)
 		return gui
