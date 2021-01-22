@@ -2,7 +2,8 @@ local g = {}
 local uis = game:GetService("UserInputService")
 local mouse = game.Players.LocalPlayer:GetMouse()
 
-function g:CreateBase(parent, title)
+function g:CreateB
+	e(parent, title)
 	if parent:IsA("Instance") then
 		local base = {}
 		base.screen_gui = Instance.new("ScreenGui", parent)
@@ -167,7 +168,7 @@ function g:CreateCheckbox(section, name, state)
 		end
 		gui:ChangeState(state)
 		gui.btn.Activated:Connect(function()
-				print("as)
+				print("as")
 			gui:ChangeState(not gui.state)
 		end)
 		return gui
