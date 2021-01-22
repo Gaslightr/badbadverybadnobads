@@ -120,7 +120,7 @@ function g:CreateSection(category, name)
 		section.title.TextXAlignment = Enum.TextXAlignment.Center
 		section.title.Size = UDim2.fromScale(1, 0.1)
 		section.ui_layout = Instance.new("UIListLayout", section.content)
-		section.ui_layout.Padding = UDim.new(0.03, 0)
+		section.ui_layout.Padding = UDim.new(0.05, 0)
 		section.ui_layout.SortOrder = Enum.SortOrder.LayoutOrder
 		return section
 	end
