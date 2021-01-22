@@ -155,7 +155,7 @@ function g:CreateCheckbox(section, name, state)
 		gui.btn.BackgroundTransparency = 1
 		gui.btn.Text = ""
 		function gui:ChangeState(state)
-			if gui.state then
+			if state then
 				gui.box.BackgroundColor3 = Color3.fromRGB(37, 165, 69)
 				gui.state = false
 			else
