@@ -256,7 +256,9 @@ function g:CreateComboBox(section, name, items, current_item)
 		combo_box.container.Position = UDim2.fromScale(0, 1)
 		combo_box.container.BackgroundTransparency = 1
 		combo_box.container.Visible = false
-		combo_box.container.ZIndex = 5
+		combo_box.container.ZIndex = 1
+		combo_box.btn.ZIndex = 1
+		combo_box.bg.ZIndex = 1
 		combo_box.ui_layout = Instance.new("UIListLayout", combo_box.container)
 		for i, t in pairs(items) do
 			combo_box[t] = Instance.new("TextButton", combo_box.container)
