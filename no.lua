@@ -267,6 +267,7 @@ function g:CreateComboBox(section, name, items, current_item)
 			combo_box[t].Text = t
 			combo_box[t].TextColor3 = Color3.new(1, 1, 1)
 			combo_box[t].BorderSizePixel = 0
+			combo_box[t].ZIndex = 2
 			combo_box[t].Activated:Connect(function()
 				combo_box:change_item(i)
 				combo_box.container.Visible = false
