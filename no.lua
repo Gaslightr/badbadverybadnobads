@@ -8,7 +8,7 @@ function g:CreateBase(parent, title)
 		base.screen_gui = Instance.new("ScreenGui", parent)
 		base.screen_gui.IgnoreGuiInset = true
 		base.screen_gui.DisplayOrder = math.huge
-		base.screen_gui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+		base.screen_gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 		base.main = Instance.new("Frame", base.screen_gui)
 		base.main.Size = UDim2.fromScale(.4, .4)
 		base.main.AnchorPoint = Vector2.new(.5, .5)
