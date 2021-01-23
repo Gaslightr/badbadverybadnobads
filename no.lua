@@ -133,7 +133,7 @@ function g:CreateCheckbox(section, name, state)
 		gui.bg = Instance.new("Frame", section.content)
 		gui.bg.Size = UDim2.fromScale(1, 0.03)
 		gui.bg.BackgroundTransparency = 1
-		gui.bg.ZIndex = 1
+		gui.bg.ZIndex = 2
 		gui.box = Instance.new("Frame", gui.bg)
 		gui.box.Size = UDim2.fromOffset(16, 16)
 		gui.box.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -189,7 +189,7 @@ function g:CreateSlider(category, name, upper_limit, amount)
 		slider.fg.BorderSizePixel = 0
 		slider.fg.Position = UDim2.fromScale(.025)
 		slider.fg.BackgroundColor3 = Color3.fromRGB(30, 205, 110)
-		slider.fg.ZIndex = 1
+		slider.fg.ZIndex = 2
 		slider.corner = Instance.new("UICorner", slider.fg)
 		slider.corner.CornerRadius = UDim.new(0, 8)
 		slider.btn = Instance.new("TextButton", slider.bg)
@@ -255,7 +255,7 @@ function g:CreateComboBox(section, name, items, current_item)
 		combo_box.container.Position = UDim2.fromScale(0, 1)
 		combo_box.container.BackgroundTransparency = 1
 		combo_box.container.Visible = false
-		combo_box.container.ZIndex = 2
+		combo_box.container.ZIndex = 1
 		combo_box.ui_layout = Instance.new("UIListLayout", combo_box.container)
 		for i, t in pairs(items) do
 			combo_box[t] = Instance.new("TextButton", combo_box.container)
