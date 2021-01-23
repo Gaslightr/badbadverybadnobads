@@ -275,8 +275,8 @@ function g:CreateComboBox(section, name, items, current_item)
 			end)
 		end
 		function combo_box:change_item(i)
-			combo_box.current_item = items[i]
-			combo_box.btn.Text = combo_box.current_item
+			combo_box.current_item = i
+			combo_box.btn.Text = items[i]
 		end
 		combo_box.btn.Activated:Connect(function()
 			combo_box.container.Visible = not combo_box.container.Visible
