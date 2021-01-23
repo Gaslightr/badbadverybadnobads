@@ -191,7 +191,6 @@ function g:CreateSlider(category, name, upper_limit, amount)
 		slider.fg.BorderSizePixel = 0
 		slider.fg.Position = UDim2.fromScale(.025)
 		slider.fg.BackgroundColor3 = Color3.fromRGB(30, 205, 110)
-		slider.fg.ZIndex = 2
 		slider.corner = Instance.new("UICorner", slider.fg)
 		slider.corner.CornerRadius = UDim.new(0, 8)
 		slider.btn = Instance.new("TextButton", slider.bg)
