@@ -59,6 +59,7 @@ function g:CreateBase(parent, title)
 		end
 		function base:ToggleVisibility()
 			base.screen_gui.Enabled = not base.screen_gui.Enabled
+			uis.ModalEnabled = base.screen_gui.Enabled
 		end
 		uis.InputBegan:Connect(function(_)
 			if _.UserInputType == Enum.UserInputType.Keyboard then
