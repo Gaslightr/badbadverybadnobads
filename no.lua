@@ -243,7 +243,7 @@ function g:CreateComboBox(section, name, items, current_item)
 		combo_box.bg.BackgroundTransparency = 1
 		combo_box.btn = Instance.new("TextButton", combo_box.bg)
 		combo_box.btn.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-		combo_box.btn.Size = UDim2.fromScale(.8, 1)
+		combo_box.btn.Size = UDim2.fromScale(.95, 1)
 		combo_box.btn.AnchorPoint = Vector2.new(.5, .5)
 		combo_box.btn.Position = UDim2.fromScale(.5, .5)
 		combo_box.btn.Text = ""
