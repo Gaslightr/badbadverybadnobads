@@ -2,6 +2,8 @@ local g = {}
 local uis = game:GetService("UserInputService")
 local mouse = game.Players.LocalPlayer:GetMouse()
 
+g.fps = false
+
 function g:CreateBase(parent, title)
 	if parent:IsA("Instance") then
 		local base = {}
@@ -59,7 +61,15 @@ function g:CreateBase(parent, title)
 		end
 		function base:ToggleVisibility()
 			base.screen_gui.Enabled = not base.screen_gui.Enabled
-			uis.ModalEnabled = base.screen_gui.Enabled
+			if fps then
+				if base.screen_gui.Enabled and Enum.MouseBehavior.LockCenter then
+					uis.MouseBehavior = Enum.MouseBehavior.Default
+					game:GetService("UserInputService").MouseIconEnabled = true
+				else
+					uis.MouseBehavior = Enum.MouseBehavior.LockCenter
+					Enum.MouseBehavior.LockCenter = false
+				end
+			end
 		end
 		uis.InputBegan:Connect(function(_)
 			if _.UserInputType == Enum.UserInputType.Keyboard then
