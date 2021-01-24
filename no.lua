@@ -60,7 +60,7 @@ function g:CreateBase(parent, title)
 		end
 		function base:ToggleVisibility()
 			base.screen_gui.Enabled = not base.screen_gui.Enabled
-			print(Enum.MouseBehavior.LockCenter)
+			print(uis.MouseBehavior)
 			if base.screen_gui.Enabled and Enum.MouseBehavior.LockCenter then
 				base.waslocked = true
 				uis.MouseBehavior = Enum.MouseBehavior.Default
