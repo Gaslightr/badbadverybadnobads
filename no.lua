@@ -69,7 +69,6 @@ function g:CreateBase(parent, title)
 				base.waslocked = false
 				uis.MouseBehavior = Enum.MouseBehavior.LockCenter
 				game:GetService("UserInputService").MouseIconEnabled = false
-				Enum.MouseBehavior.LockCenter = false
 			end
 		end
 		uis.InputBegan:Connect(function(_)
