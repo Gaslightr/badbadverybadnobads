@@ -2,11 +2,10 @@ local g = {}
 local uis = game:GetService("UserInputService")
 local mouse = game.Players.LocalPlayer:GetMouse()
 
-g.fps = false
-
 function g:CreateBase(parent, title)
 	if parent:IsA("Instance") then
 		local base = {}
+		base.was_locked = false
 		base.screen_gui = Instance.new("ScreenGui", parent)
 		base.screen_gui.IgnoreGuiInset = true
 		base.screen_gui.DisplayOrder = math.huge
@@ -61,14 +60,15 @@ function g:CreateBase(parent, title)
 		end
 		function base:ToggleVisibility()
 			base.screen_gui.Enabled = not base.screen_gui.Enabled
-			if fps then
-				if base.screen_gui.Enabled and Enum.MouseBehavior.LockCenter then
-					uis.MouseBehavior = Enum.MouseBehavior.Default
-					game:GetService("UserInputService").MouseIconEnabled = true
-				else
-					uis.MouseBehavior = Enum.MouseBehavior.LockCenter
-					Enum.MouseBehavior.LockCenter = false
-				end
+			if base.screen_gui.Enabled and Enum.MouseBehavior.LockCenter then
+				base.waslocked = true
+				uis.MouseBehavior = Enum.MouseBehavior.Default
+				game:GetService("UserInputService").MouseIconEnabled = true
+			elseif base.waslocked then
+				base.waslocked = false
+				uis.MouseBehavior = Enum.MouseBehavior.LockCenter
+				game:GetService("UserInputService").MouseIconEnabled = false
+				Enum.MouseBehavior.LockCenter = false
 			end
 		end
 		uis.InputBegan:Connect(function(_)
