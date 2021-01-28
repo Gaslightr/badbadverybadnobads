@@ -261,7 +261,7 @@ function g:CreateComboBox(section, name, items, current_item)
 		combo_box.btn.BorderSizePixel = 0
 		combo_box.corner = Instance.new("UICorner", combo_box.btn)
 		combo_box.corner.CornerRadius = UDim.new(0 ,8)
-		combo_box.container = Instance.new("ScrollimgFrame", combo_box.btn)
+		combo_box.container = Instance.new("ScrollingFrame", combo_box.btn)
 		combo_box.container.Size = UDim2.fromScale(1, 10)
 		combo_box.container.Position = UDim2.fromScale(0, 1)
 		combo_box.container.BackgroundTransparency = 1
