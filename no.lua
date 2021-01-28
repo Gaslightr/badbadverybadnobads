@@ -273,7 +273,7 @@ function g:CreateComboBox(section, name, items, current_item)
 		for i, t in pairs(items) do
 			combo_box[t] = Instance.new("TextButton", combo_box.container)
 			combo_box[t].BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-			combo_box[t].Size = UDim2.fromScale(1, 1)
+			combo_box[t].Size = UDim2.fromScale(1, .1)
 			combo_box[t].Text = tostring(t)
 			combo_box[t].TextColor3 = Color3.new(1, 1, 1)
 			combo_box[t].BorderSizePixel = 0
